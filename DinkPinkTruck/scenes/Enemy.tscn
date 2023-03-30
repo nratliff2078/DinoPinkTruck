@@ -6,6 +6,7 @@
 radius = 4.0
 
 [node name="Enemy" type="RigidBody2D"]
+position = Vector2( 497, 296 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.0273038, 0.0273038 )
