@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="PhysicsMaterial" id=3]
-bounce = 0.9
+bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 360, 153.75 )
@@ -23,11 +23,10 @@ mass = 1.0
 current = true
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 598, 437 )
+position = Vector2( 596, 516 )
 mode = 2
-mass = 47.83
+mass = 10.6041
 physics_material_override = SubResource( 3 )
-gravity_scale = 31.72
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
