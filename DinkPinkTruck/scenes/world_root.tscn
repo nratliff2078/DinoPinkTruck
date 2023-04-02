@@ -1,26 +1,63 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/block.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=3]
+
+[sub_resource type="PhysicsMaterial" id=3]
+bounce = 0.9
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 360, 153.75 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 379.25, 22 )
+extents = Vector2( 231.672, 437.5 )
 
 [node name="world_root" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 491, 318 )
+position = Vector2( 242, 513 )
+mass = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
 
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 598, 437 )
+mode = 2
+mass = 47.83
+physics_material_override = SubResource( 3 )
+gravity_scale = 31.72
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+position = Vector2( 383.5, 571.75 )
+scale = Vector2( 11.9219, 0.648438 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 387, 705.25 )
+shape = SubResource( 2 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 612.25, 571 )
-scale = Vector2( 11.8984, 0.671875 )
+position = Vector2( 23, 402.5 )
+scale = Vector2( 0.6875, 5.89062 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 611.75, 570 )
+position = Vector2( -187, 407 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D3"]
+position = Vector2( 744, 398 )
+scale = Vector2( 0.6875, 5.89062 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 955.328, 418.5 )
 shape = SubResource( 1 )
