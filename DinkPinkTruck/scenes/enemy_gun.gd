@@ -1,21 +1,16 @@
-extends RigidBody2D
+extends ColorRect
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var rng = RandomNumberGenerator.new()
-var my_random_number = 1
-var time = 0
+onready var player = get_tree().get_root().get_node("root//player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	apply_impulse(Vector2(0,0), Vector2(0,-100))
-	
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	time += delta
-	if time >= 1:
-		time = 0
-		
+	print(player.position)

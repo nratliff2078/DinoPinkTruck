@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 export var move_speed = 5
-export var jump_speed = 2500
+export var jump_speed = 5000
 export var health = 100.0
 export var max_health = 100.0
 
@@ -18,11 +18,11 @@ func _process(delta):
 		#apply_central_impulse creates the "push" affect
 		#apply_torque_impulse makes the body rotate	
 
-	if Input.is_action_just_released("right"):
+	if Input.is_action_pressed("right"):
 		apply_central_impulse(Vector2(move_speed, 0))
 		apply_torque_impulse(torque_speed)
 
-	if Input.is_action_just_released("left"):
+	if Input.is_action_pressed("left"):
 		apply_central_impulse(Vector2(-move_speed, 0))
 		apply_torque_impulse(-torque_speed)
 	if Input.is_action_just_released("up"):
