@@ -2,11 +2,8 @@
 
 [ext_resource path="res://images/block.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=3]
-<<<<<<< HEAD
-=======
 [ext_resource path="res://scenes/main_ui.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/main_player.tscn" type="PackedScene" id=5]
->>>>>>> f56857b2adc36b3fb394636a16e1720bd70aab7a
 
 [sub_resource type="PhysicsMaterial" id=3]
 bounce = 1.0
@@ -20,15 +17,8 @@ extents = Vector2( 231.672, 437.5 )
 [node name="world_root" type="Node2D"]
 position = Vector2( -2, 8 )
 
-<<<<<<< HEAD
-[node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 191, 413 )
-mass = 1.0
-linear_damp = 2.706
-=======
 [node name="main_player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 192, 412 )
->>>>>>> f56857b2adc36b3fb394636a16e1720bd70aab7a
 
 [node name="main_ui" parent="main_player" instance=ExtResource( 4 )]
 
