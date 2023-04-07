@@ -14,12 +14,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
-	print("Mouse pos:", mouse_pos)
+	#print("Mouse pos:", mouse_pos)
 	var player_pos = get_tree().root.get_node("world_root/main_player/player").get_position()
-	print("Player pos:", player_pos)
+	#print("Player pos:", player_pos)
 	
 	var vect = get_global_mouse_position() - player_pos
-	print("vect,", vect)
+	#print("vect,", vect)
 	
 	#var angle = atan2(-new_y,new_x)
 	var angle = atan2(-vect[1],vect[0])
@@ -27,6 +27,6 @@ func _process(delta):
 	
 	var deg_angle = rad2deg(angle)
 
-	print("Angle:", deg_angle)
+	#print("Angle:", deg_angle)
 	self.global_rotation_degrees = deg_angle
 	

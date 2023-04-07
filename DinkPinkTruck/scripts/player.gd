@@ -41,8 +41,8 @@ func change_health(amount):
 	var health_bar = get_tree().root.get_node("world_root/main_player/main_ui/CanvasLayer/player_health")
 	health_bar.value = (health / max_health) * 100
 	if health <= 0:
-		print("You have died!")
-		
+		#print("You have died!")
+		pass
 		
 		
 		
