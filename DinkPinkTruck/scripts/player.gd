@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 export var move_speed = 5
-export var jump_speed = 5000
+export var jump_speed = 2000
 export var health = 100.0
 export var max_health = 100.0
 
