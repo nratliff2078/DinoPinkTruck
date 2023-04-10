@@ -3,11 +3,12 @@ extends RigidBody2D
 
 export var move_speed = 5
 export var jump_speed = 2000
-export var health = 100.0
-export var max_health = 100.0
+export var max_health = 200.0
+export var health = 200.0
 
 
-var torque_speed = 8000 # This must be an extremely large number
+
+var torque_speed = 2000 # This must be an extremely large number
 
 # apply_impulse(Vector2(move_speed, 0), Vector2(5000,0))
    # This will give the effect similar to a pool stick hitting a pool ball
@@ -43,9 +44,10 @@ func change_health(amount):
 	if health <= 0:
 		#print("You have died!")
 		pass
-		
-		
-		
-		
 
-	
+
+
+
+func _on_Area2D_body_entered(body):
+	if body.has_method("hit"):
+		body.hit()

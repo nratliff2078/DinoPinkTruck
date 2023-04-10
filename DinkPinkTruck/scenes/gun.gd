@@ -21,11 +21,10 @@ func _process(delta):
 	var angle = atan2(position[1],position[0])
 	
 	var deg_angle = rad2deg(angle)
-	print(deg_angle * -1)
+
 	self.rotation_degrees = deg_angle
 	
 	if deg_angle > 90 or deg_angle < -90:
-		$Sprite.flip_h = true
 		$Sprite.flip_v = true
 	else:
 		$Sprite.flip_h = true
