@@ -11,6 +11,8 @@ func _ready():
 	pass # Replace with function body.
 
 
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var player_pos = get_tree().get_root().get_node("world_root/main_player/player").global_position
@@ -29,3 +31,4 @@ func _process(delta):
 	else:
 		$Sprite.flip_h = true
 		$Sprite.flip_v = false
+

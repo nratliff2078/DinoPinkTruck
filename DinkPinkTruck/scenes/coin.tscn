@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://images/coin_anim.png" type="Texture" id=1]
+[ext_resource path="res://scripts/coin.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -53,14 +54,16 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=10]
 radius = 15.0333
 
-[node name="coin" type="Area2D"]
+[node name="coin" type="Area2D" groups=["coin"]]
 position = Vector2( 252, 150 )
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "coin_spin"
-frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 10 )
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
