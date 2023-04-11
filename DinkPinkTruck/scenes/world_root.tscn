@@ -18,13 +18,15 @@ extents = Vector2( 231.672, 437.5 )
 position = Vector2( -2, 8 )
 
 [node name="main_player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 192, 412 )
+position = Vector2( 391, 510 )
 
 [node name="main_ui" parent="main_player" instance=ExtResource( 4 )]
 
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 126, 479 )
+
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 596, 516 )
-mode = 2
+position = Vector2( 676, 479 )
 mass = 10.6041
 physics_material_override = SubResource( 3 )
 
@@ -58,5 +60,5 @@ scale = Vector2( 0.6875, 5.89062 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( 955.328, 418.5 )
+position = Vector2( 979, 363 )
 shape = SubResource( 1 )

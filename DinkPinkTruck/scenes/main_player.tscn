@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/player_gun.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player_gun.gd" type="Script" id=3]
 
+[sub_resource type="CircleShape2D" id=1]
+radius = 35.0
+
 [node name="main_player" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -9.53674e-07, 0 )
+collision_layer = 3
+collision_mask = 3
 mass = 3.04
 
 [node name="gun" parent="player" instance=ExtResource( 1 )]
@@ -16,3 +21,12 @@ script = ExtResource( 3 )
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2( 9.53674e-07, 0 )
 current = true
+
+[node name="Area2D" type="Area2D" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D"]
+position = Vector2( -4, 3 )
+shape = SubResource( 1 )
+
+[connection signal="body_shape_entered" from="player" to="player" method="_on_player_body_shape_entered"]
+[connection signal="body_entered" from="player/Area2D" to="player" method="_on_Area2D_body_entered"]

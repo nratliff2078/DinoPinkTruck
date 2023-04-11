@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 512, 20.5 )
+
+[node name="world_root" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 126, 515 )
+
+[node name="wall" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="wall"]
+margin_left = 1.0
+margin_top = 560.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2( 512, 580.5 )
+shape = SubResource( 1 )
+
+[node name="wall2" type="StaticBody2D" parent="."]
+rotation = -1.5708
+
+[node name="ColorRect" type="ColorRect" parent="wall2"]
+margin_left = -601.0
+margin_top = -40.0
+margin_right = 422.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2( -91, -21 )
+shape = SubResource( 1 )
+
+[node name="wall3" type="StaticBody2D" parent="."]
+rotation = -1.5708
+
+[node name="ColorRect" type="ColorRect" parent="wall3"]
+margin_left = -602.0
+margin_top = 1024.0
+margin_right = 421.0
+margin_bottom = 1064.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+position = Vector2( -90, 1045 )
+shape = SubResource( 1 )
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 562, 525 )
