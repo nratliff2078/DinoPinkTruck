@@ -1,13 +1,14 @@
 extends RigidBody2D
 
 
-export var move_speed = 10
+export var move_speed = 25
 export var jump_speed = 2000
 export var max_health = 200.0
 export var health = 200.0
 export var points = 0
 
 
+var game_over = 0
 
 var torque_speed = 2000 # This must be an extremely large number
 
@@ -16,6 +17,7 @@ var torque_speed = 2000 # This must be an extremely large number
 func _ready():
 	get_tree().paused = true
 	get_tree().root.get_node("world_root/main_player/main_ui/CanvasLayer").visible = false
+	get_tree().root.get_node("world_root/end_screen/CanvasLayer").visible = false
 
 func _process(delta):
 		# Vector2(x,y)
@@ -35,6 +37,8 @@ func _process(delta):
 		apply_central_impulse(Vector2(0, -jump_speed))
 
 	if Input.is_action_just_pressed("menu"):
+		if game_over == 1: 
+			return
 		get_tree().root.get_node("world_root/title_screen/CanvasLayer").visible = true
 		get_tree().root.get_node("world_root/main_player/main_ui/CanvasLayer").visible = false
 		get_tree().paused = true
@@ -47,7 +51,10 @@ func change_health(amount):
 	health_bar.value = (health / max_health) * 100
 	if health <= 0:
 		print("You have died!")
-		get_tree().reload_current_scene()
+		game_over = 1
+		get_tree().paused = true
+		get_tree().root.get_node("world_root/end_screen/CanvasLayer").visible = true
+		get_tree().root.get_node("world_root/main_player/main_ui/CanvasLayer/player_health").visible = false
 
 func add_points(amount):
 	points += amount
