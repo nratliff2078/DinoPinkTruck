@@ -622,13 +622,130 @@ position = Vector2( 442, 601 )
 position = Vector2( 526, 304 )
 
 [node name="coin12" parent="." instance=ExtResource( 3 )]
-position = Vector2( 486, 625 )
+position = Vector2( 409, 1098 )
 
 [node name="coin13" parent="." instance=ExtResource( 3 )]
 position = Vector2( 526, 204 )
 
 [node name="coin14" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1295, 617 )
+
+[node name="coin23" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1476, 72 )
+
+[node name="coin24" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1429, 109 )
+
+[node name="coin25" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1295, 221 )
+
+[node name="coin26" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1241, 221 )
+
+[node name="coin27" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1189, 221 )
+
+[node name="coin28" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1058, 334 )
+
+[node name="coin29" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1015, 623 )
+
+[node name="coin30" parent="." instance=ExtResource( 3 )]
+position = Vector2( 884, 629 )
+
+[node name="coin31" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1128, 623 )
+
+[node name="coin32" parent="." instance=ExtResource( 3 )]
+position = Vector2( 960, 334 )
+
+[node name="coin33" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1527, 102 )
+
+[node name="coin45" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2805, 1056 )
+
+[node name="coin46" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2802, 1144 )
+
+[node name="coin47" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2804, 1223 )
+
+[node name="coin48" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1955, 1099 )
+
+[node name="coin49" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1831, 1094 )
+
+[node name="coin50" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1631, 1103 )
+
+[node name="coin51" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1717, 1098 )
+
+[node name="coin52" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1733, 739 )
+
+[node name="coin53" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1742, 642 )
+
+[node name="coin54" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1742, 541 )
+
+[node name="coin55" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1739, 430 )
+
+[node name="coin56" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2003, 692 )
+
+[node name="coin57" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2192, 602 )
+
+[node name="coin58" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2491, 538 )
+
+[node name="coin59" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2782, 433 )
+
+[node name="coin60" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2447, 334 )
+
+[node name="coin61" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2185, 213 )
+
+[node name="coin34" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1015, 333 )
+
+[node name="coin35" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1031, 1088 )
+
+[node name="coin36" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1374, 621 )
+
+[node name="coin37" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1336, 615 )
+
+[node name="coin38" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1421, 621 )
+
+[node name="coin39" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1108, 1092 )
+
+[node name="coin40" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1467, 621 )
+
+[node name="coin41" parent="." instance=ExtResource( 3 )]
+position = Vector2( 956, 1092 )
+
+[node name="coin42" parent="." instance=ExtResource( 3 )]
+position = Vector2( 485, 1095 )
+
+[node name="coin43" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1513, 619 )
+
+[node name="coin44" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1555, 621 )
 
 [node name="coin2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 825, 110 )
