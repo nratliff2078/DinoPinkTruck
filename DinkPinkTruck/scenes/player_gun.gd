@@ -14,12 +14,11 @@ func _process(delta):
 	
 	var player_pos = get_tree().get_root().get_node("world_root/main_player/player").global_position
 	var mouse_pos = get_viewport().get_mouse_position()
-	#var x_diff = mouse_pos[0] - player_pos[0]
-	#var y_diff = mouse_pos[1] - player_pos[1]
 	var x_diff = mouse_pos[0] - player_pos[0]
 	var y_diff = mouse_pos[1] - player_pos[1]
+	
 	var angle = atan2(-y_diff,x_diff)
-	self.global_rotation_degrees = rad2deg(angle)
+	self.global_rotation_degrees = -rad2deg(angle)
 	
 	#if Input.is_action_pressed("gun_up"):
 	#	angle += 10
@@ -28,13 +27,10 @@ func _process(delta):
 	#	angle -= 10
 		
 	#var deg_angle = rad2deg(angle)
-
 	var deg_angle = angle
-	
 	#self.global_rotation_degrees = deg_angle
-	
-	print("gun angle: ", angle)
 
+		
 	if Input.is_action_pressed("space"):
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = get_tree().get_root().get_node("world_root/main_player/player").global_position
@@ -44,9 +40,6 @@ func _process(delta):
 		
 		var bullet_angle = -self.global_rotation
 		var bullet_dir = Vector2(cos(bullet_angle), -sin(bullet_angle)) * bullet_speed
-		
-		print(bullet_angle)
-		print(bullet_dir)
 		bullet_instance.apply_impulse(Vector2(), Vector2(bullet_dir[0],bullet_dir[1]))
 		get_tree().get_root().add_child(bullet_instance)
 		
