@@ -11,7 +11,7 @@ bounce = 1.0
 [sub_resource type="CircleShape2D" id=1]
 radius = 33.0151
 
-[node name="Enemy" type="RigidBody2D"]
+[node name="Enemy" type="RigidBody2D" groups=["enemy"]]
 position = Vector2( 497, 296 )
 collision_layer = 5
 mode = 2
@@ -29,6 +29,7 @@ shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( -2, 2 )
+collision_layer = 5
 gravity_vec = Vector2( 0, 0 )
 gravity = 0.0
 linear_damp = 0.0
@@ -43,3 +44,5 @@ flip_h = true
 
 [node name="Position2D" type="Position2D" parent="Area2D"]
 position = Vector2( -70, -6 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -6,6 +6,9 @@ extends RigidBody2D
 # var b = "text"
 var time = 0
 var bullet_speed = 100
+export var health = 100
+export var maxhealth = 100
+
 onready var bullet = preload("res://scenes/Bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -32,3 +35,8 @@ func _process(delta):
 			get_tree().get_root().add_child(bullet_instance)
 			time = 0
 		
+func _on_Area2D_body_entered(body):
+	if body.has_method("hit"):
+		body.hit()
+
+

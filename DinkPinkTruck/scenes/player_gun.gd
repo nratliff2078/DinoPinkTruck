@@ -29,7 +29,11 @@ func _process(delta):
 	#var deg_angle = rad2deg(angle)
 	var deg_angle = angle
 	#self.global_rotation_degrees = deg_angle
-
+	if deg_angle > 90 or deg_angle < -90:
+		$Sprite.flip_v = true
+	else:
+		$Sprite.flip_h = true
+		$Sprite.flip_v = false
 		
 	if Input.is_action_pressed("space"):
 		var bullet_instance = bullet.instance()
