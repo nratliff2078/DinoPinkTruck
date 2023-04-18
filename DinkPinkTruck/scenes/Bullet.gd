@@ -20,6 +20,6 @@ func _process(delta):
 		
 func hit():
 	get_tree().get_root().get_node("world_root/main_player/player").change_health(0.5)
-	queue_free()
 	#print("hit")
+	self.queue_free()
 

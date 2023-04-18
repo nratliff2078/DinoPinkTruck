@@ -21,4 +21,5 @@ func _on_Area2D_body_entered(body):
 		body.health -= 10
 		if body.health <= 0:
 			body.queue_free()
+		get_parent().queue_free()
 

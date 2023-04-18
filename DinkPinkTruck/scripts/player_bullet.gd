@@ -19,7 +19,6 @@ func _process(delta):
 		time = 0
 		
 func hit():
-	print("PLAYER BULLET hit")
 	queue_free()
 
 
