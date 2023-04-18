@@ -15,9 +15,11 @@ var torque_speed = 2000 # This must be an extremely large number
 # apply_impulse(Vector2(move_speed, 0), Vector2(5000,0))
    # This will give the effect similar to a pool stick hitting a pool ball
 func _ready():
+	
 	get_tree().paused = true
 	get_tree().root.get_node("world_root/main_player/main_ui/CanvasLayer").visible = false
 	get_tree().root.get_node("world_root/end_screen/CanvasLayer").visible = false
+	
 
 func _process(delta):
 		# Vector2(x,y)
@@ -65,3 +67,15 @@ func add_points(amount):
 func _on_Area2D_body_entered(body):
 	if body.has_method("hit"):
 		body.hit()
+		
+
+
+
+var current_level = "level1"
+
+
+func handle_warp():
+	var new_pos
+	if current_level == "level1":
+		new_pos = get_tree().root.get_node("world_root/level_1/player_start").position
+		self.global_position = new_pos
