@@ -1,10 +1,11 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://images/block.png" type="Texture" id=1]
 [ext_resource path="res://images/sky1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/player_end.gd" type="Script" id=4]
 [ext_resource path="res://sprites/flag.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 41, 63.25 )
@@ -783,5 +784,14 @@ position = Vector2( 870, 69 )
 
 [node name="coin6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 912, 70 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1550, 1226 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 775, 613 )
+
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 461, 372 )
 
 [connection signal="body_entered" from="player_end" to="player_end" method="_on_player_end_body_entered"]
