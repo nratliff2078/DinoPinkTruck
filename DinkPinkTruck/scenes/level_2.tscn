@@ -8,6 +8,9 @@
 [ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/spike.tscn" type="PackedScene" id=7]
 
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 41, 63.25 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18, 1179.5 )
 
@@ -62,10 +65,10 @@ extents = Vector2( 385.75, 27.75 )
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 111.25, 25 )
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 41, 63.25 )
-
 [node name="level_2" type="Node2D"]
+
+[node name="player_start" type="Area2D" parent="."]
+position = Vector2( 162, 37 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -268, 15 )
@@ -73,25 +76,39 @@ scale = Vector2( 2.10938, 2.87 )
 texture = ExtResource( 1 )
 offset = Vector2( 625, 371 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="player_end" type="Area2D" parent="."]
+position = Vector2( 1849, 2111 )
+collision_layer = 5
+script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+[node name="Sprite" type="Sprite" parent="player_end"]
+position = Vector2( -15, -21.5 )
+scale = Vector2( 0.722222, 0.615741 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_end"]
+position = Vector2( -17, -22 )
+shape = SubResource( 19 )
+
+[node name="block_1" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="block_1"]
 position = Vector2( 11, 981 )
 scale = Vector2( 0.5, 36.7188 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block_1"]
 position = Vector2( 13, 984.5 )
 shape = SubResource( 1 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="block_2" type="StaticBody2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+[node name="Sprite" type="Sprite" parent="block_2"]
 position = Vector2( 664, 574 )
 scale = Vector2( 5.98437, 0.640625 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block_2"]
 position = Vector2( 664, 573 )
 shape = SubResource( 2 )
 
@@ -280,20 +297,6 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D27"]
 position = Vector2( 133.75, 634 )
 shape = SubResource( 18 )
-
-[node name="player_end" type="Area2D" parent="."]
-position = Vector2( 1849, 2111 )
-collision_layer = 5
-script = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="player_end"]
-position = Vector2( -15, -21.5 )
-scale = Vector2( 0.722222, 0.615741 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_end"]
-position = Vector2( -17, -22 )
-shape = SubResource( 19 )
 
 [node name="coin" parent="." instance=ExtResource( 6 )]
 position = Vector2( 254, 127 )
